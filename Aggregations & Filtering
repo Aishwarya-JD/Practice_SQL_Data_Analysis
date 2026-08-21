@@ -1,0 +1,94 @@
+use swiggy;
+
+-- 1. Select all columns from the restaurants table
+SELECT * FROM RESTAURANTS;
+
+-- 2. Display the names and cites of all restaurants
+SELECT name, city FROM RESTAURANTS;
+
+-- 3. Find all restaurants located in Bangalore
+SELECT * FROM RESTAURANTS
+WHERE city = 'Bangalore';
+
+-- 4. List the names and ratings of restaurants with a rating is greater than 4.0
+SELECT name, rating  FROM RESTAURANTS
+WHERE rating > 4.0;
+
+-- 5. Find restaurants where cost is less than or equal to 300.
+SELECT name, cost FROM RESTAURANTS
+WHERE cost <= 300;
+
+-- 6. Find all restaurants serving Biryani cuisine.
+SELECT name, cuisine FROM RESTAURANTS
+WHERE cuisine = "Biryani";
+
+-- 9 May 206 Class Notes:
+ -- 7. Show the top 5 restaurants with the highest ratings.
+ SELECT name, rating FROM RESTAURANTS
+ ORDER BY rating DESC 
+ LIMIT 5;
+
+-- 8. List restaurants with a rating count greater than 1000.
+ SELECT name, rating_count FROM RESTAURANTS
+ WHERE rating_count > 1000;
+
+-- 9. Count the total number of restaurants in the dataset.
+SELECT COUNT(*) AS total_rest 
+FROM RESTAURANTS;
+
+-- 10. Find the average cost of all restaurants.
+SELECT AVG(cost) AS AVG_COST FROM RESTAURANTS;
+
+-- 11. Display restaurant names and costs ordered by cost in ascending order.
+SELECT name, cost FROM RESTAURANTS 
+ORDER BY COST ASC;
+
+-- 12. Find the maximum and minimum cost of restaurants for each cuisine.
+SELECT cuisine, MIN(COST) AS MIN_COST, MAX(COST) AS MAX_COST
+FROM RESTAURANTS
+GROUP BY cuisine;
+
+-- 13. Find the average rating of restaurants for each city.
+ SELECT  city, AVG(rating) AS AVG_RATING 
+ FROM RESTAURANTS
+ GROUP BY city;
+
+-- 14. Count the number of restaurants available in each city.
+SELECT city, COUNT(*) AS TOTAL_REST FROM RESTAURANTS 
+GROUP BY city;
+
+-- How many cities are their in my dataset 
+SELECT COUNT(DISTINCT city) AS UNIQUE_CITIES FROM RESTAURANTS;
+
+-- rating > 4, rating_count > 3000
+SELECT rating, rating_count 
+FROM RESTAURANTS
+WHERE rating > 4 and rating_count > 3000;
+
+-- city is mumbai, rating is 5
+SELECT city, rating FROM RESTAURANTS
+WHERE city = "mumbai" or rating = 5;
+
+-- rating_count between 3000 and 10,000
+SELECT * FROM RESTAURANTS
+WHERE rating_count BETWEEN 3000 AND 10000;
+
+-- either Mumbai, Bangalore, Delhi and Goa
+SELECT * FROM RESTAURANTS 
+WHERE city IN ('Mumbai', 'Bangalore', 'Delhi', 'Goa');
+
+-- 16. List cuisines that have more than 10 restaurants.
+SELECT  cuisine, COUNT(*) FROM RESTAURANTS
+GROUP BY cuisine
+ HAVING COUNT(*) > 10 ;
+
+-- 19. Find cities where the average restaurant rating is greater than 4.0.
+SELECT city , AVG(rating) AS AVG_RATING FROM RESTAURANTs
+GROUP BY city
+HAVING AVG(rating) > 4.5; 
+
+-- 18. Display the average cost of restaurants for each cuisine.
+SELECT cuisine, AVG(cost) AS AVG_COST FROM RESTAURANTS;
+
+Focus: Data filtering, sorting, and aggregate functions.Overview: Explores the SWIGGY dataset by executing targeted data retrieval queries. 
+Features key conditional logic (WHERE, IN, BETWEEN), text and number matching, dataset summary metrics (COUNT, AVG, MIN, MAX), and grouped filtering using GROUP BY and HAVING.  
