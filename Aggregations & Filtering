@@ -90,5 +90,14 @@ HAVING AVG(rating) > 4.5;
 -- 18. Display the average cost of restaurants for each cuisine.
 SELECT cuisine, AVG(cost) AS AVG_COST FROM RESTAURANTS;
 
-Focus: Data filtering, sorting, and aggregate functions.Overview: Explores the SWIGGY dataset by executing targeted data retrieval queries. 
-Features key conditional logic (WHERE, IN, BETWEEN), text and number matching, dataset summary metrics (COUNT, AVG, MIN, MAX), and grouped filtering using GROUP BY and HAVING.  
+Focus: Data filtering, sorting, and aggregate functions
+
+Core Concepts Covered:
+
+Advanced filtering with WHERE, BETWEEN, IN, AND/OR operators
+
+Sorting and dataset pagination (ORDER BY, LIMIT)
+
+Aggregation metrics (COUNT, AVG, MIN, MAX, DISTINCT)
+
+Group-level filtering (GROUP BY, HAVING)
