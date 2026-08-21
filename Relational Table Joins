@@ -1,0 +1,50 @@
+USE company_db;
+-- Q1.  Write a SQL query to display EmployeeID, FirstName, LastName, and DepartmentName for employees who belong to a department.
+SELECT employees.EmployeeID, employees.FirstName, 
+employees.LastName, departments.DepartmentName
+from employees
+INNER JOIN DEPARTMENTS
+ON employees.DepartmentID = departments.DepartmentID;
+
+-- Q2. Write a SQL query to display EmployeeID, FirstName, and Salary for employees who have a salary record.
+SELECT e.EmployeeID, e.FirstName, s.salary
+FROM employees AS e
+INNER JOIN salaries AS s
+ON e.EmployeeID = s.EmployeeID;
+
+-- Q3. Write a SQL query to display EmployeeID, FirstName, and DepartmentName for all employees, even if they do not belong to any department.
+SELECT e.EmployeeID, e.FirstName, d.DepartmentName
+FROM employees AS e 
+LEFT JOIN departments AS d
+ON e.DepartmentID = d.DepartmentID;
+
+-- Q4. Write a SQL query to display all departments along with employees working in them. Departments without employees should also appear.
+SELECT e.EmployeeID, e.FirstName, d.DepartmentName
+FROM employees AS e 
+RIGHT JOIN departments AS d
+ON e.DepartmentID = d.DepartmentID;
+
+-- Q5. Write a SQL query to display EmployeeID, FirstName, DepartmentName, and Salary for employees who have both department and salary information.
+SELECT e.EmployeeID, e.FirstName, d.DepartmentName, s.salary
+FROM employees AS e 
+INNER JOIN departments AS d
+ON e.DepartmentID = d.DepartmentID
+INNER JOIN salaries AS s
+ON e.EmployeeID = s.EmployeeID;
+
+-- Q13. Write a SQL query to generate all possible combinations of employees and departments.
+SELECT e.*, d.*
+FROM employees AS e 
+CROSS JOIN departments AS d;
+
+-- Q14. Write a SQL query using SELF JOIN to display pairs of employees who work in the same department.
+SELECT e1.FirstName, e2.FirstName, e1.DepartmentID
+FROM employees AS e1
+JOIN employees AS e2
+ON e1.DepartmentID = e2.DepartmentID
+AND e1.EmployeeID > e2.EmployeeID;
+
+Focus: Combining multiple relational tables.
+
+Overview: Utilizes the company_db schema to demonstrate all core SQL join types. 
+Solves relational data problems using INNER JOIN, LEFT JOIN, RIGHT JOIN, CROSS JOIN, and SELF JOIN to connect employee, department, and salary records.
