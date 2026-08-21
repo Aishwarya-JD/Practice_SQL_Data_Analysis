@@ -46,5 +46,12 @@ AND e1.EmployeeID > e2.EmployeeID;
 
 Focus: Combining multiple relational tables.
 
-Overview: Utilizes the company_db schema to demonstrate all core SQL join types. 
-Solves relational data problems using INNER JOIN, LEFT JOIN, RIGHT JOIN, CROSS JOIN, and SELF JOIN to connect employee, department, and salary records.
+Core Concepts Covered:
+
+Combining tables using primary and foreign key references
+
+INNER JOIN, LEFT JOIN, and RIGHT JOIN operations
+
+CROSS JOIN for full Cartesian products
+
+SELF JOIN for hierarchical or intra-table relationship matching
