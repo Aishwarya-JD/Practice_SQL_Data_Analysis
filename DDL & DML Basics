@@ -1,0 +1,53 @@
+CREATE DATABASE satvik;
+
+USE satvik;
+
+CREATE TABLE t1 (
+id INT,
+name VARCHAR(50),
+ega INT
+);
+
+ALTER TABLE t1 RENAME COLUMN ega TO age;
+
+ALTER TABLE t1 ADD COLUMN Phone_no BIGINT;
+
+ALTER TABLE t1 ADD PRIMARY KEY (id);
+
+ALTER TABLE t1 ADD CONSTRAINT c1 PRIMARY KEY (id);
+
+ALTER TABLE t1  DROP PRIMARY KEY;
+
+ALTER TABLE t1 MODIFY COLUMN id INT; 
+
+INSERT INTO  t1 VALUES
+		(1, "Ankit", 1000, 1234567890);
+        
+INSERT INTO t1 VALUES
+		(2, "Manas", 19, 1234567865),
+        (3, "Sahil", 150, 1234567865),
+        (4, "Jayan", 19, 123456789);
+        
+INSERT INTO t1 (name, id, phone_no, age) VALUES
+		("Vansh", 5, 4567890123, 24);
+        
+INSERT INTO t1 VALUES(6, NULL, 55, NULL);
+
+DROP TABLE t1;
+
+SELECT * FROM t1;
+
+UPDATE t1 
+SET age = 20
+WHERE id = 1;
+
+UPDATE t1 
+SET age = 25
+WHERE id = 3;
+
+DELETE FROM t1 
+where id = 3;
+
+Focus: Database setup and schema modifications.
+
+Overview: Demonstrates table creation (t1), column modifications (ALTER TABLE), constraint management (adding and dropping primary keys), and standard CRUD operations (INSERT, UPDATE, DELETE, DROP) within the satvik database schema.
