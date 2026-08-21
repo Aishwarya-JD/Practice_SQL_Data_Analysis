@@ -28,7 +28,7 @@ This repository contains practical solutions based on realistic datasets, includ
 ```
 
 ## **🛠️ Tech Stack & Skills Demonstrated**
-RDBMS: MySQL / Standard SQL
+**RDBMS:** MySQL / Standard SQL
 
 **Data Modeling:** DDL, DML, Schema Design, Primary Key & Constraint Handling
 
