@@ -1,0 +1,88 @@
+USE SWIGGY;
+
+-- 1. Which restaurant of delhi is visited by least number of people?
+SELECT * FROM RESTAURANTS
+WHERE city = "Delhi"
+AND rating_count = (SELECT min(rating_count)  
+					FROM RESTAURANTS
+					WHERE city = "Delhi" );
+                    
+-- 2. Which restaurant has generated maximum revenue all over india?
+SELECT name, (rating_count * cost)  AS  Revenue 
+FROM RESTAURANTS 
+WHERE rating_count * cost =  (SELECT max(rating_count * cost) 
+                              FROM RESTAURANTS);
+                  
+-- 3. How many restaurants are having rating more than the average rating?
+SELECT count(*)  
+FROM RESTAURANTS 
+WHERE rating > (SELECT  avg(rating) 
+				FROM RESTAURANTS);
+                
+-- 4. Which restaurant of Delhi has generated most revenue?
+SELECT name, (rating_count * cost)  AS  Revenue 
+FROM RESTAURANTS 
+WHERE city = "Delhi" AND rating_count * cost =  (SELECT max(rating_count * cost) FROM RESTAURANTS
+                                                 WHERE city = "Delhi");
+                                                 
+-- 5. Which restaurant chain has maximum number of restaurants?
+With  t1 AS
+(SELECT name, COUNT(name) AS Chains
+FROM RESTAURANTS
+GROUP BY name)
+
+ SELECT name, Chains
+  FROM t1
+  WHERE Chains = (SELECT max(Chains)  FROM t1);      
+  
+  -- 6. Which restaurant chain has generated maximum revenue?
+With  t2 AS
+(SELECT name, SUM(rating_count * cost) AS Total_Revenue
+FROM RESTAURANTS
+GROUP BY name)
+SELECT name,Total_Revenue
+FROM t2
+WHERE Total_Revenue = (SELECT max(Total_Revenue) FROM t2);  
+
+-- 7. Which city has maximum number of restaurants?
+
+SELECT 
+    city, COUNT(*) AS num_res_city
+FROM
+    RESTAURANTS
+GROUP BY city
+ORDER BY COUNT(*) DESC
+LIMIT 5;
+
+-- 8. Which city has generated maximum revenue all over india?
+With t3 AS
+(SELECT city, sum(rating_count * cost) AS city_rev
+FROM RESTAURANTS
+GROUP BY city)
+SELECT city, city_rev FROM t3
+WHERE city_rev = (SELECT max(city_rev) FROM t3);
+
+ -- 9. List 10 least expensive cuisines?
+select cuisine, avg(cost) as 'avg_cost' from restaurants
+group by cuisine order by avg(cost) asc limit 10;
+
+-- 10. List 10 most expensive cuisines?
+select cuisine, avg(cost) as 'avg_cost' from restaurants
+group by cuisine order by avg(cost) desc limit 10;
+
+-- 11. What is the city is having Biryani as most popular cuisine
+select city, avg(cost), count(*) as restaurants from restaurants 
+where cuisine = 'Biryani' 
+group by city 
+order by restaurants desc;
+
+-- 12. List top 10 unique restaurants with unique name only throughout the dataset as per generate maximum revenue (Single restaurant with that name)
+select name, sum(cost * rating_count) as 'revenue' from restaurants 
+group by name having count(name) = 1
+order by sum(cost * rating_count) desc limit 10;
+
+Focus: Advanced subqueries and Common Table Expressions.
+
+Overview: Tackles complex business analytics problems on the SWIGGY restaurant database. 
+Features single-value subqueries, multi-level nested queries, and 
+temporary result sets using WITH (CTEs) to calculate revenue metrics, identify top performance chains, and analyze regional popularity.
