@@ -83,6 +83,13 @@ order by sum(cost * rating_count) desc limit 10;
 
 Focus: Advanced subqueries and Common Table Expressions.
 
-Overview: Tackles complex business analytics problems on the SWIGGY restaurant database. 
-Features single-value subqueries, multi-level nested queries, and 
-temporary result sets using WITH (CTEs) to calculate revenue metrics, identify top performance chains, and analyze regional popularity.
+Core Concepts Covered:
+
+Single-value scalar subqueries in WHERE clauses
+
+Aggregating calculated metrics (e.g., Estimated Revenue = rating_count * cost)
+
+Multi-stage business analysis using CTEs (WITH ... AS)
+
+Category-wise ranking and chain performance analytics
+
