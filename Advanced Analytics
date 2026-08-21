@@ -107,6 +107,13 @@ FROM RESTAURANTS;
 
 Focus: Analytical ranking and conditional business logic.
 
-Overview: Demonstrates advanced analytical reporting using SQL Window Functions. 
-Features RANK(), DENSE_RANK(), and ROW_NUMBER() over partitioned data (PARTITION BY), 
-alongside conditional labeling using CASE and IF statements to perform revenue distribution analysis (such as top 1% and 20% revenue contribution).
+Core Concepts Covered:
+
+Ranking algorithms (RANK(), DENSE_RANK(), ROW_NUMBER())
+
+Partitioning data slices (OVER(PARTITION BY ... ORDER BY ...))
+
+Pareto analysis and percentage-of-total distribution (e.g., Top 1% vs Top 20% revenue generators)
+
+Conditional logic and customer segment labeling (CASE WHEN ... THEN, IF)
+
