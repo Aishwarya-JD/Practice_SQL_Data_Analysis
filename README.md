@@ -1,4 +1,4 @@
-# 🗄️ Master SQL Analytics Repository
+# 🗄️  SQL Analytics Practice Repository
 
 [![SQL](https://img.shields.io/badge/Language-SQL-blue.svg)](https://en.wikipedia.org/wiki/SQL)
 [![Database](https://img.shields.io/badge/Database-MySQL-orange.svg)](https://www.mysql.com/)
