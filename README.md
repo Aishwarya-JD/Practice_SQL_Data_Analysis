@@ -13,14 +13,25 @@ This repository contains practical solutions based on realistic datasets, includ
 ## 📂 Repository Architecture
 
 ```text
-├── 01_SQL_Basics/
-│   └── SQL_1 - SQL Basics.sql             # DDL, DML, Schema Design & Constraints
-├── 02_Aggregations/
-│   └── SQL_2 - Aggregate Functions.sql    # Data Filtering, Sorting & Group Summaries
-├── 03_Joins/
-│   └── SQL_3 - Joins.sql                  # Multi-table Relational Queries (INNER, LEFT, RIGHT, SELF)
+├── 01_DDL & DML Basics/
+│   └── SQL Basics.sql             # DDL, DML, Schema Design & Constraints
+├── 02_Aggregations & Filtering/
+│   └── Aggregate Functions.sql    # Data Filtering, Sorting & Group Summaries
+├── 03_Relational Joins/
+│   └── Joins.sql                  # Multi-table Relational Queries (INNER, LEFT, RIGHT, SELF)
 ├── 04_Subqueries_and_CTEs/
-│   └── SQL_4 - Subquery.sql               # Complex Nested Queries & CTE Analysis
-├── 05_Window_Functions/
-│   └── SQL_5 - Window Function.sql        # Ranking, Partitioning & Advanced Revenue Analysis
-└── README.md                              # Repository Documentation
+│   └── Subquery.sql               # Complex Nested Queries & CTE Analysis
+├── 05_Window Functions &
+    Business Intelligence/
+│   └── Window Function.sql        # Ranking, Partitioning & Advanced Revenue Analysis
+└── README.md                      # Repository Documentation
+```
+
+## **🛠️ Tech Stack & Skills Demonstrated**
+RDBMS: MySQL / Standard SQL
+
+**Data Modeling:** DDL, DML, Schema Design, Primary Key & Constraint Handling
+
+**Data Transformation:** CTEs, Subqueries, Relational Joins, Window Functions
+
+**Analytical Techniques:** Revenue Aggregation, Distribution Analysis (Top N%), Performance Ranking
