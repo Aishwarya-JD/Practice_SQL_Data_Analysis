@@ -50,4 +50,15 @@ where id = 3;
 
 Focus: Database setup and schema modifications.
 
-Overview: Demonstrates table creation (t1), column modifications (ALTER TABLE), constraint management (adding and dropping primary keys), and standard CRUD operations (INSERT, UPDATE, DELETE, DROP) within the satvik database schema.
+Core Concepts Covered:
+
+Schema creation and modification (CREATE DATABASE, USE, CREATE TABLE)
+
+Altering tables, renaming columns, and modifying data types (ALTER TABLE, RENAME COLUMN, MODIFY COLUMN)
+
+Managing constraints and key relationships (PRIMARY KEY, ADD CONSTRAINT, DROP PRIMARY KEY)
+
+Performing core CRUD operations (INSERT INTO, UPDATE, DELETE, DROP TABLE)
+
+
+
